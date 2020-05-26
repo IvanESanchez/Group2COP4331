@@ -51,7 +51,7 @@ Attempts to add a contact to the database for a given user
 
 `<email>` - string (max length 320)
 
-`<phone number>` - string (max length 12)
+`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens)
 <br><br>
 
 ### JSON Output on success:
