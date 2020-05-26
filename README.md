@@ -2,6 +2,7 @@
 ## Table of contents:
 * [Login.php](#loginphp)
 * [AddContact.php](#addcontactphp)
+* [DeleteContact.php](#deletecontactphp)
 
 ## Login.php
 Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
@@ -11,9 +12,9 @@ Attempts to login with a given username and password. If successful, returns the
 { "username":<username>, "password":<password> }
 ```
 
-<username> - string
+`<username>` - string
 
-<password> - string
+`<password>` - string
 <br><br>
 
 ### JSON Output on success:
@@ -21,11 +22,11 @@ Attempts to login with a given username and password. If successful, returns the
 { "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "error":"" }
 ```
 
-<user id> - integer
+`<user id>` - integer
 
-<first name> - string
+`<first name>` - string
 
-<last name> - string
+`<last name>` - string
 <br><br>
 
 ### JSON Output on failure:
@@ -42,15 +43,15 @@ Attempts to add a contact to the database for a given user
 { "userId":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
 ```
 
-<user id> - integer
+`<user id>` - integer
 
-<first name> - string (max length 20)
+`<first name>` - string (max length 20)
 
-<last name> - string (max length 20)
+`<last name>` - string (max length 20)
 
-<email> - string (max length 320)
+`<email>` - string (max length 320)
 
-<phone number> - string (max length 12)
+`<phone number>` - string (max length 12)
 <br><br>
 
 ### JSON Output on success:
@@ -64,5 +65,4 @@ Attempts to add a contact to the database for a given user
 { "error":<error> }
 ```
 
-<error> - string
-<br><br>
+`<error>` - string
