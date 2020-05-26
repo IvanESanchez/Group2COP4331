@@ -17,7 +17,7 @@ Attempts to login with a given username and password. If successful, returns the
 `<username>` - string to use as username
 
 `<password>` - string to use as password
-<br><br>
+<br>
 
 ### JSON output on success:
 ```
@@ -29,7 +29,7 @@ Attempts to login with a given username and password. If successful, returns the
 `<first name>` - string representing the user's first name
 
 `<last name>` - string representing the user's last name
-<br><br>
+<br>
 
 ### JSON output on failure:
 ```
@@ -54,13 +54,13 @@ Attempts to add a contact to the database for a given user.
 `<email>` - string (max length 320) representing the contacts email address (email#domain.com)
 
 `<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens) representing the contact's phone number
-<br><br>
+<br>
 
 ### JSON output on success:
 ```
 { "error":"" }
 ```
-<br><br>
+<br>
 
 ### JSON output on failure:
 ```
@@ -85,7 +85,7 @@ Searches for contacts based on a given search term and returns the results.
 ```
 
 `<search term>` - string to search for
-<br><br>
+<br>
 
 ### JSON output on success:
 ```
@@ -93,7 +93,7 @@ Searches for contacts based on a given search term and returns the results.
 ```
 
 `<first name i>` - string representing contact's first name
-<br><br>
+<br>
 
 ### JSON output on failure:
 ```
