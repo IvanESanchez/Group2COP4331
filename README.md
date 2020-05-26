@@ -3,66 +3,106 @@
 * [Login.php](#loginphp)
 * [AddContact.php](#addcontactphp)
 * [DeleteContact.php](#deletecontactphp)
+* [SearchContact.php](#searchcontactphp)
+* [UpdateContact.php](#updatecontactphp)
 
 ## Login.php
 Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
 
-### JSON Input:
+### JSON input:
 ```
 { "username":<username>, "password":<password> }
 ```
 
-`<username>` - string
+`<username>` - string to use as username
 
-`<password>` - string
+`<password>` - string to use as password
 <br><br>
 
-### JSON Output on success:
+### JSON output on success:
 ```
 { "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "error":"" }
 ```
 
-`<user id>` - integer
+`<user id>` - integer representing the user's unique id
 
-`<first name>` - string
+`<first name>` - string representing the user's first name
 
-`<last name>` - string
+`<last name>` - string representing the user's last name
 <br><br>
 
-### JSON Output on failure:
+### JSON output on failure:
 ```
 { "userid":0, "firstName":"", "lastName":"", "error":"No Records Found" }
 ```
 <br><br><br><br>
 
 ## AddContact.php
-Attempts to add a contact to the database for a given user
+Attempts to add a contact to the database for a given user.
 
-### JSON Input:
+### JSON input:
 ```
 { "userId":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
 ```
 
-`<user id>` - integer
+`<user id>` - integer representing the user's unique id
 
-`<first name>` - string (max length 20)
+`<first name>` - string (max length 20) representing the contact's first name
 
-`<last name>` - string (max length 20)
+`<last name>` - string (max length 20) representing the contact's last name
 
-`<email>` - string (max length 320)
+`<email>` - string (max length 320) representing the contacts email address (email#domain.com)
 
-`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens)
+`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens) representing the contact's phone number
 <br><br>
 
-### JSON Output on success:
+### JSON output on success:
 ```
 { "error":"" }
 ```
 <br><br>
 
-### JSON Output on failure:
+### JSON output on failure:
 ```
 { "error":<error> }
 ```
 
-`<error>` - string
+`<error>` - string containing error information
+<br><br><br><br>
+
+## DeleteContact.php
+Attempts to delete a contact from the database for a given user.
+
+W.I.P
+<br><br><br><br>
+
+## SearchContact.php
+Searches for contacts based on a given search term and returns the results.
+
+### JSON input
+```
+{ "search":<search term> }
+```
+
+`<search term>` - string to search for
+<br><br>
+
+### JSON output on success:
+```
+{ "results":[<first name 1>, <first name 2>, ..., <first name x>], "error":"" }
+```
+
+`<first name i>` - string representing contact's first name
+<br><br>
+
+### JSON output on failure:
+```
+{ "userid":0, "firstName":"", "lastName":"", "error":<error> }
+```
+`<error>` - string with error information
+<br><br><br><br>
+
+## UpdateContact.php
+Updates contact information for a given contact for a given user.
+
+W.I.P
