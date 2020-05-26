@@ -4,6 +4,8 @@
 * [AddContact.php](#addcontactphp)
 
 ## Login.php
+Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
+
 ### JSON Input:
 ```
 { "username":<username>, "password":<password> }
@@ -30,13 +32,11 @@
 ```
 { "userid":0, "firstName":"", "lastName":"", "error":"No Records Found" }
 ```
-<br><br>
-    
-### Description:
-Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
 <br><br><br><br>
 
 ## AddContact.php
+Attempts to add a contact to the database for a given user
+
 ### JSON Input:
 ```
 { "userId":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
@@ -66,6 +66,3 @@ Attempts to login with a given username and password. If successful, returns the
 
 <error> - string
 <br><br>
-
-### Description:
-Attempts to add a contact to the database for a given user
