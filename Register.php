@@ -13,7 +13,7 @@
 	}
 	else
 	{
-		$sql = "INSERT into User (firstName,lastName,username,password) VALUES ('" . $firstName . "','" . $lastName . "','" . $username . "','" . $password . "')";
+		$sql = "INSERT into user (firstName,lastName,username,password) VALUES ('" . $firstName . "','" . $lastName . "','" . $username . "','" . $password . "')";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
