@@ -11,7 +11,7 @@
 	} 
 	else
 	{
-		$sql = "DELETE FROM Contacts WHERE userid='" . $userid . "' AND contactid='" . $contactid . "'"; //alert box!!!
+		$sql = "DELETE FROM contacts WHERE userid='" . $userid . "' AND contactid='" . $contactid . "'"; //alert box!!!
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
