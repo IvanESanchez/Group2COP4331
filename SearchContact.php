@@ -12,7 +12,7 @@
 	} 
 	else
 	{
-		$sql = "SELECT * FROM contacts WHERE (firstName like '%" . $inData["search"] . "%' OR lastName like '%" . $inData["search"] . "%' OR phoneNumber like '%" . $inData["search"] . "%' OR email like '%" . $inData["search"] . "%') AND userid=" . $inData["userid"];
+		$sql = "SELECT * FROM contact WHERE (firstName like '%" . $inData["search"] . "%' OR lastName like '%" . $inData["search"] . "%' OR phoneNumber like '%" . $inData["search"] . "%' OR email like '%" . $inData["search"] . "%') AND userid=" . $inData["userid"];
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
