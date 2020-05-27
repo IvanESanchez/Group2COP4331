@@ -14,7 +14,7 @@
 	}
 	else
 	{
-		$sql = "SELECT userid,firstName,lastName FROM User WHERE username='" . $inData["username"] . "' and password='" . $password . "'";
+		$sql = "SELECT userid,firstName,lastName FROM user WHERE username='" . $inData["username"] . "' and password='" . $password . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
