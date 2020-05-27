@@ -15,7 +15,7 @@
 	} 
 	else
 	{
-		$sql = "UPDATE Contacts SET userId = " . $userId . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
+		$sql = "UPDATE contact SET userId = " . $userId . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
