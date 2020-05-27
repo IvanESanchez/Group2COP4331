@@ -1,28 +1,30 @@
 <?php
 	$inData = getRequestInfo();
-
-	$password = hash('sha256', $inData["password"]);
-	$firstName = $inData["firstName"];
+	
+	$userId = $inData["userId"]; //$row["ID"];
+	$firstName = $inData["firstName"]; 
 	$lastName = $inData["lastName"];
-	$username = $inData["username"];
+	$email = $inData["email"]; 
+	$phoneNumber = $inData["phoneNumber"]; 
 
-	$conn = new mysqli("107.180.58.62", "SEC_k5loNkSFPjD4", "Cop4331Data!@", "cop4331-contacts");
-	if ($conn->connect_error)
+	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
+	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
-	}
+	} 
 	else
 	{
-		$sql = "insert into Users (firstName,lastName,username,password) VALUES (" . $firstName . ",'" . $lastName .",'". $username .",'". $password . "')";
+		$sql = "INSERT into contact (userId,firstName,lastName,email,phoneNumber) VALUES (" . $userId . ",'" . $firstName . "','" . $lastName . "','" . $email . "','" . $phoneNumber . "')";
+
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
 		$conn->close();
 	}
-
+	
 	returnWithError("");
-
+	
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
@@ -33,11 +35,11 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-
+	
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-
+	
 ?>
