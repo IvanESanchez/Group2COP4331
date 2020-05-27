@@ -1,28 +1,29 @@
 <?php
 
 	$inData = getRequestInfo();
-	
-	$id = 0;
+
+	$userid = 0;
 	$firstName = "";
 	$lastName = "";
+	$password = hash('sha256', $inData["password"]);
 
-	$conn = new mysqli("107.180.58.62", "SEC_k5loNkSFPjD4", "Cop4331Data!@", "cop4331-contacts");
-	if ($conn->connect_error) 
+	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
+	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
-	} 
+	}
 	else
 	{
-		$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+		$sql = "SELECT userid,firstName,lastName FROM User WHERE username='" . $inData["username"] . "' and password='" . $password . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
 			$row = $result->fetch_assoc();
 			$firstName = $row["firstName"];
 			$lastName = $row["lastName"];
-			$id = $row["ID"];
-			
-			returnWithInfo($firstName, $lastName, $id );
+			$userid = $row["userid"];
+
+			returnWithInfo($firstName, $lastName, $userid );
 		}
 		else
 		{
@@ -30,7 +31,7 @@
 		}
 		$conn->close();
 	}
-	
+
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
@@ -41,17 +42,17 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-	
+
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-	
-	function returnWithInfo( $firstName, $lastName, $id )
+
+	function returnWithInfo( $firstName, $lastName, $userid )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		$retValue = '{"userid":' . $userid . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
-	
+
 ?>
