@@ -58,7 +58,7 @@ Attempts to add a contact to the database for a given user.
 
 ### JSON output on success:
 ```
-{  }
+{ "error":"" }
 ```
 <br>
 
@@ -84,7 +84,7 @@ Attempts to delete a contact from the database for a given user.
 
 ### JSON output on success:
 ```
-{  }
+{ "error":"" }
 ```
 <br>
 
@@ -143,7 +143,7 @@ Updates contact information for a given contact for a given user.
 <br>
 ### JSON output on success:
 ```
-{  }
+{ "error":"" }
 ```
 <br>
 
