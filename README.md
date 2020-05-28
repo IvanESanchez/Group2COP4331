@@ -171,7 +171,7 @@ Updates contact information for a given contact for a given user.
 
 `<email>` - string (max length 320) representing the contacts email address (email#domain.com)
 
-`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens) representing the contact's phone number
+`<phone number>` - string (max length 15; 2 for country code, 3 for area code, 7 for phone number, and 3 for hyphens) representing the contact's phone number
 
 `<contact id>` - integer representing the contact's unique id
 <br>
