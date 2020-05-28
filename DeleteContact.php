@@ -1,7 +1,7 @@
 <?php
 	$inData = getRequestInfo(); //button?
 	
-	$userId = $inData["userId"];
+	$userid = $inData["userid"];
 	$contactid = $inData["contactid"]
 
 	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
