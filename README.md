@@ -135,8 +135,10 @@ Searches for contacts based on a given search term and returns the results.
 
 ### JSON input
 ```
-{ "search":<search term> }
+{ "userid":<user id>, "search":<search term> }
 ```
+
+`<user id>` - id of user to search contacts of
 
 `<search term>` - string to search for
 <br>
