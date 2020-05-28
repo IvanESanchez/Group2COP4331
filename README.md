@@ -143,10 +143,22 @@ Searches for contacts based on a given search term and returns the results.
 
 ### JSON output on success:
 ```
+{ "results":[<contact id 1>, <contact id 2>, ..., <contact id x>], "error":"" }
 { "results":[<first name 1>, <first name 2>, ..., <first name x>], "error":"" }
+{ "results":[<last name 1>, <last name 2>, ..., <last name x>], "error":"" }
+{ "results":[<email 1>, <email 2>, ..., <email x>], "error":"" }
+{ "results":[<phone number 1>, <phone number 2>, ..., <phone number x>], "error":"" }
 ```
 
+`<contact id i>` - integer representing the contact's unique id
+
 `<first name i>` - string representing contact's first name
+
+`<last name i>` - string representing contact's last name
+
+`<email i>` - string representing contact's email
+
+`<phone number i>` - string representing contact's phone number
 <br>
 
 ### JSON output on failure:
