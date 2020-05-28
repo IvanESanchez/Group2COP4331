@@ -1,26 +1,26 @@
 <?php
 	$inData = getRequestInfo(); //button?
 	
-	$userid = $inData["userid"];
-	$contactid = $inData["contactid"]
+	$userId = $inData["userId"];
+	$contactid = $inData["contactid"];
 
-	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
+	$conn = new mysqli("localhost", ***, ***, "cop4331-contacts");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$sql = "DELETE FROM contact WHERE userid='" . $userid . "' AND contactid='" . $contactid . "'"; //alert box!!!
+		$sql = "DELETE FROM contact WHERE contactid='" . $contactid . "'"; //alert box!!!
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
 		$conn->close();
+		
+	    returnWithError("");
 	}
-	
-	returnWithError("");
 	
 	function getRequestInfo()
 	{

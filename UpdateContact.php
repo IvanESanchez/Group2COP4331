@@ -1,21 +1,21 @@
 <?php
 	$inData = getRequestInfo(); //button?
 	
-	$userid = $inData["userid"]; //$row["id"];
+	$userId = $inData["userId"]; //$row["ID"];
 	$firstName = $inData["firstName"]; 
 	$lastName = $inData["lastName"];
 	$email = $inData["email"]; 
 	$phoneNumber = $inData["phoneNumber"]; 
 	$contactid = $inData["contactid"];
 
-	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
+	$conn = new mysqli("localhost", ***, ***, "cop4331-contacts");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$sql = "UPDATE contact SET userid = " . $userid . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
+		$sql = "UPDATE contact SET userId = " . $userId . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
