@@ -1,7 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$userId = $inData["userId"]; //$row["ID"];
+	$userid = $inData["userid"]; //$row["id"];
 	$firstName = $inData["firstName"]; 
 	$lastName = $inData["lastName"];
 	$email = $inData["email"]; 
@@ -14,7 +14,7 @@
 	} 
 	else
 	{
-		$sql = "INSERT into contact (userId,firstName,lastName,email,phoneNumber) VALUES (" . $userId . ",'" . $firstName . "','" . $lastName . "','" . $email . "','" . $phoneNumber . "')";
+		$sql = "INSERT into contact (userid,firstName,lastName,email,phoneNumber) VALUES (" . $userid . ",'" . $firstName . "','" . $lastName . "','" . $email . "','" . $phoneNumber . "')";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
