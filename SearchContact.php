@@ -23,7 +23,13 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
-				$searchResults .= '"' . $row["firstName"] . '"';
+				$searchResults .= '{';
+				$searchResults .= '"contactid":' . $row["contactid"] . ',';
+				$searchResults .= '"firstName":"' . $row["firstName"] . '",';
+				$searchResults .= '"lastName":"' . $row["lastName"] . '",';
+				$searchResults .= '"email":"' . $row["email"] . '",';
+				$searchResults .= '"phoneNumber":"' . $row["phoneNumber"] . '"';
+				$searchResults .= '}';
 			}
 		}
 		else
