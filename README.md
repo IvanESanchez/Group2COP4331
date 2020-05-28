@@ -26,10 +26,8 @@ Attempts to register a new user with a username, first name, last name, and pass
 
 ### JSON output on success:
 ```
-{ "userid":<user id>, "error":"" }
+{ "error":"" }
 ```
-
-`<user id>` - integer representing the user's unique id
 <br>
 
 ### JSON output on failure:
