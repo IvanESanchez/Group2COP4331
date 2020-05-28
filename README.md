@@ -58,7 +58,7 @@ Attempts to add a contact to the database for a given user.
 
 ### JSON output on success:
 ```
-{ "error":"" }
+{  }
 ```
 <br>
 
