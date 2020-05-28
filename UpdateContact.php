@@ -1,7 +1,7 @@
 <?php
 	$inData = getRequestInfo(); //button?
 	
-	$userId = $inData["userId"]; //$row["ID"];
+	$userid = $inData["userid"]; //$row["id"];
 	$firstName = $inData["firstName"]; 
 	$lastName = $inData["lastName"];
 	$email = $inData["email"]; 
@@ -15,7 +15,7 @@
 	} 
 	else
 	{
-		$sql = "UPDATE contact SET userId = " . $userId . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
+		$sql = "UPDATE contact SET userid = " . $userid . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
