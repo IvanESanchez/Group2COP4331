@@ -5,7 +5,7 @@
 	$searchResults = "";
 	$searchCount = 0;
 
-	$conn = new mysqli("107.180.58.62", "xk5kfy582mtp", "cPan3131#!#!", "cop4331-contacts");
+	$conn = new mysqli("localhost", ***, ***, "cop4331-contacts");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -23,6 +23,7 @@
 					$searchResults .= ",";
 				}
 				$searchCount++;
+				//$searchResults .= '"' . $row["firstName"] . '"';
 				$searchResults .= '{';
 				$searchResults .= '"contactid":' . $row["contactid"] . ',';
 				$searchResults .= '"firstName":"' . $row["firstName"] . '",';
@@ -31,6 +32,8 @@
 				$searchResults .= '"phoneNumber":"' . $row["phoneNumber"] . '"';
 				$searchResults .= '}';
 			}
+			
+	        returnWithInfo( $searchResults );
 		}
 		else
 		{
@@ -38,8 +41,6 @@
 		}
 		$conn->close();
 	}
-
-	returnWithInfo( $searchResults );
 
 	function getRequestInfo()
 	{
