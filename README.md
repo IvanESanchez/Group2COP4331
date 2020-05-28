@@ -1,10 +1,44 @@
 # lemoncode.club API documentation
 ## Table of contents:
+* [Register.php](#registerphp)
 * [Login.php](#loginphp)
 * [AddContact.php](#addcontactphp)
 * [DeleteContact.php](#deletecontactphp)
 * [SearchContact.php](#searchcontactphp)
 * [UpdateContact.php](#updatecontactphp)
+
+## Register.php
+Attempts to register a new user with a username, first name, last name, and password. If successful, returns their user id for use in other API calls.
+
+### JSON input:
+```
+{ "username":<username>, "password":<password>, "firstName":<first name>, "lastName":<last name> }
+```
+
+`<username>` - string to use as username
+
+`<password>` - string to use as password
+
+`<first name>` - string representing the user's first name
+
+`<last name>` - string representing the user's last name
+<br>
+
+### JSON output on success:
+```
+{ "userid":<user id>, "error":"" }
+```
+
+`<user id>` - integer representing the user's unique id
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
 
 ## Login.php
 Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
