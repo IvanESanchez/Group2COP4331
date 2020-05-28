@@ -42,7 +42,7 @@ Attempts to add a contact to the database for a given user.
 
 ### JSON input:
 ```
-{ "userId":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
+{ "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
 ```
 
 `<user id>` - integer representing the user's unique id
@@ -72,8 +72,28 @@ Attempts to add a contact to the database for a given user.
 
 ## DeleteContact.php
 Attempts to delete a contact from the database for a given user.
+### JSON input:
+```
+{ "userid":<user id>, "contactid":<contact id> }
+```
 
-W.I.P
+`<user id>` - integer representing the user's unique id
+
+`<contact id>` - integer representing the contact's unique id
+<br>
+
+### JSON output on success:
+```
+{  }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
 <br><br><br><br>
 
 ## SearchContact.php
@@ -104,5 +124,33 @@ Searches for contacts based on a given search term and returns the results.
 
 ## UpdateContact.php
 Updates contact information for a given contact for a given user.
+### JSON input:
+```
+{ "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number>, "contactid":<contact id> }
+```
 
-W.I.P
+`<user id>` - integer representing the user's unique id
+
+`<first name>` - string (max length 20) representing the contact's first name
+
+`<last name>` - string (max length 20) representing the contact's last name
+
+`<email>` - string (max length 320) representing the contacts email address (email#domain.com)
+
+`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens) representing the contact's phone number
+
+`<contact id>` - integer representing the contact's unique id
+<br>
+### JSON output on success:
+```
+{  }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
