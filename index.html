@@ -1,25 +1,52 @@
 <html>
 <head>
-	<title>Contact List</title>
-	<script type="text/javascript" src="js/md5.js"></script>
+	<title>LemonCODE Contact List</title>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
 </head>
 <body>
 
-<h1 id="title">Contact List</h1>
 
+<br>
 <div id="loginDiv">
 	<div id = "imglogo">
-		<img src="css/images/sample_logo.jpg" alt="Sample Logo" class="logo" />
+		<p> </p>
+		<img src="css/images/lemon_logo.png" alt="Sample Logo" class="logo" />
+		<p id="title">LemonCODE Contact List</p>
 	</div>
 
+	<p> </p>
 	<input type="text1" id="loginName" class="login" placeholder="&#xF007; Username" style="font-family: Arial, 'Font Awesome 5 Free'" ><br />
-	<input type="password1" id="loginPassword" class="login" placeholder="&#xF023; Password" style="font-family: Arial, 'Font Awesome 5 Free'" ><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Do It </button>
+	<input type="password" id="loginPassword" class="login" placeholder="&#xF023; Password" style="font-family: Arial, 'Font Awesome 5 Free'" ><br />
+	<button type="button" id="loginButton" class="indexbutton" onclick="doLogin();">Login</button>
 	<span id="loginResult"></span>
+	<span id="registerUserSuccessful"></span>
+</div>
+<div>
+	<button type="button" id="newuserbutton" class="indexbutton" onclick="openForm();"> Create New User </button>
+	
+
+		<div class="form-popup" id="myForm">
+			<form class="form-container">
+
+				<label for="FirstName"><b>First Name</b></label>
+				<input type="text" placeholder="Enter First Name" id="FirstName" required>
+
+				<label for="LastName"><b>Last Name</b></label>
+				<input type="text" placeholder="Enter Last Name" id="LastName" required>
+				
+				<label for="Username"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" id="Username" required>
+
+				<label for="Password"><b>Password</b></label>
+				<input type="Password" placeholder="Enter Password" id="Password" required>
+
+				<button type="button" class="btn" onclick="registerUser();">Create User</button>
+				<button type="button" class="btn cancel" onclick="closeForm();">Cancel</button>
+			</form>
+		</div>
+	
 </div>
 
 </body>
