@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title>My Contact List</title>
-    <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<title>Contact List</title>
+	<link href="css/styles.css" rel="stylesheet">
+	<script type="text/javascript" src="js/code.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() 
@@ -13,7 +13,7 @@
 	
 </head>
 <body>
-<h1 id="title">My Contact List</h1>
+<h1 id="contactstitle"></h1>
 
 <button type="button" id="logoutbutton" class="menubuttons" onclick="doLogout();"> Log Out </button>
 
@@ -21,98 +21,99 @@
 <div id="accessUIDiv">
     <br />
     <div class="search-container">
-        <input type="searchtext" placeholder="Search contacts by name, address, etc..." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <input id="searchtext" type="searchtext" placeholder="Search contacts by name, address, etc..." name="search">
+        <button type="submit" onclick="searchContact();"><i class="fa fa-search"></i></button>
 	</div>
 	<br />
 	<br />
 	<br />
+	<span id="contactMessage"></span>
+
 
 	<div id="search-results" style="overflow-x:auto;">
-		<table>
+		<table id="myTableData" >
 		  <tr>
 			<th>First Name</th>
 			<th>Last Name</th>
-			<th>Street Address</th>
-			<th>City, State, Zip</th>
+			<th>Email</th>
 			<th>Phone #</th>
 			<th>Update/Delete</th>
 		  </tr>
-		  <tr>
-			<td>Sample</td>
-			<td>Sample</td>
-			<td>123 Sample Street</td>
-			<td>Sample, FL 12345</td>
-			<td>000-000-0000</td>
+		  <!-- <tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 			<td>
-				<button type="submit"><i class="fa fa-refresh"></i></button>
+				<button type="submit" onclick="updateForm();"><i class="fa fa-refresh"></i></button>
 				<button type="submit"><i class="fa fa-times"></i></button>
 			</td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		  </tr>
-		  <tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		  </tr>
+		  </tr> -->
 		</table>
-	  </div>
 
-	</p><br /><br />
+	</div>
+	<!-- <p id="contactSearch"> -->
+	<br /><br />
+	<span id="contactUpdateResult"></span>
+	<span id="contactAddResult"></span>
+	<span id="contactDeleteResult"></span>
 
-	<button class="open-button" onclick="openForm()">Add Contact</button>
+	<button type="button" class="open-button" onclick="openForm();"> Add Contact </button>
+
+	<button type="button" class="open-button" onclick="showAllContacts();"> View All Contacts </button>
 
 	<div class="form-popup" id="myForm">
-  		<form action="/action_page.php" class="form-container">
+  		<form class="form-container">
 
-   			<label for="email"><b>First Name</b></label>
-   			<input type="text" placeholder="Enter Email" name="email" required>
+   			<label for="FirstName"><b>First Name</b></label>
+   			<input type="text" placeholder="Enter First Name" id="FirstName" required />
 
-    		<label for="psw"><b>Last Name</b></label>
-    		<input type="password" placeholder="Enter Password" name="psw" required>
+    		<label for="LastName"><b>Last Name</b></label>
+			<input type="text" placeholder="Enter Last Name" id="LastName" required />
+			
+			<label for="Email"><b>Email</b></label>
+			<input type="text" placeholder="Email" id="Email" required />
 
-    		<button type="submit" class="btn">Add Contact</button>
-    		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			<label for="PhoneNumber"><b>Phone Number</b></label>
+			<input type="text" placeholder="Enter Phone Number" id="PhoneNumber" required />
+
+    		<input type="button"  class="btn" value="Add Contact" onclick="addContact();closeForm();">
+    		<button type="button" class="btn cancel" onclick="closeForm();">Cancel</button>
   		</form>
+	</div>
+	<div class="form-popup" id="updateForm">
+		<form class="form-container">
+
+			<label for="FirstName"><b>New First Name</b></label>
+   			<input type="text" placeholder="Enter First Name" id="newFirstName" required />
+
+    		<label for="LastName"><b>New Last Name</b></label>
+			<input type="text" placeholder="Enter Last Name" id="newLastName" required />
+			
+			<label for="Email"><b>New Email</b></label>
+			<input type="text" placeholder="Email" id="newEmail" required />
+
+			<label for="PhoneNumber"><b>New Phone Number</b></label>
+			<input type="PhoneNumber" placeholder="Enter Phone Number" id="newPhoneNumber" required />
+
+    		<input type="button" class="btn" value ="Update Contact" onclick="updateContact();closeForm();">
+    		<button type="button" class="btn cancel" onclick="closeUpdateForm();">Cancel</button>
+		</form>
 	</div>
 
 </div>
 
-<script>
-	function openForm() {
-	  document.getElementById("myForm").style.display = "block";
-	}
-	
-	function closeForm() {
-	  document.getElementById("myForm").style.display = "none";
-	}
-	</script>
-
 </body>
 </html>
+
+<script>
+	function openForm()
+{
+	document.getElementById("myForm").style.display = "block";
+}
+  
+function closeForm()
+{
+	document.getElementById("myForm").style.display = "none";
+}
+</script>
