@@ -1,0 +1,376 @@
+body 
+{
+    background-image: url("images/background.jpg");
+    background-color: #241f55;
+}
+
+h1
+{
+    line-height: 75px;
+}
+
+#logoutbutton
+{
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid #FFFF00;
+    color: #FFFF00;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#registerUserSuccessful
+{
+    color: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    font: 15px;
+}
+
+#newuserbutton
+{
+    font-size: 20px;
+    width: 250px;
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 12px;
+    margin-right: 2px;
+    position:absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+#title 
+{
+    font-size: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFF00;
+    font-weight: bold;
+}
+
+#contactstitle 
+{
+    margin-top: 25px;
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFF00;
+    font-weight: bold;
+}
+
+#samplelogo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginDiv
+{
+    border-radius: 5px;
+    position: relative;
+    font-size: 30px;
+    background-image: linear-gradient(to right, #495b7a , #1b2a47);
+    height: 525px;
+    width: 450px;
+    display: block;
+    color: #F5F5F5;
+    opacity: .9;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#imglogo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+  
+.logo
+{
+    padding: 25px;
+    height: 150px;
+}
+
+
+#accessUIDiv
+{
+    background-image: linear-gradient(to right, #495b7a , #1b2a47);
+    width: 80%;
+    padding: 25px;
+    background-color: #b2b2b2;
+    margin: 0 auto;
+    text-align: center;
+    opacity: .9;
+}
+
+.buttons
+{
+    font-size: 30px;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.indexbutton
+{
+    background-color: #FFFF00;
+    color: black;
+    padding: 15px 15px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    width: 250px;
+    opacity: 0.8;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+
+.indexbutton:hover
+{
+    border: 3px solid #24344e;
+    opacity: 1;
+}
+
+.menubuttons
+{
+    background-color: #24344e;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.menubuttons:active {
+    transform: translateY(2px);
+ }
+
+.menubuttons:hover {
+    background-color: #495b7a;
+}
+
+#loginName
+{
+    margin-bottom: 15px;
+    font-size: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: #24344e;
+    text-align: center;
+    width: 325px;
+    height: 50px;
+    color: #F5F5F5;
+}
+
+#loginPassword
+{
+    margin-bottom: 15px;
+    font-size: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: #24344e;
+    text-align: center;
+    width: 325px;
+    height: 50px;
+    color: #F5F5F5;
+}
+
+.login::placeholder
+{
+    font-size: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: #24344e;
+    text-align: center;
+    width: 325px;
+    height: 50px;
+    color: #F5F5F5;
+}
+
+
+#colorText
+{
+	font-size: 30px;
+}
+
+input[type="searchtext"]
+{
+    text-align: left;
+    padding: 10px;
+    width: 80%;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #000000;
+}
+
+.search-container button {
+    height: 40px;
+    width: 45px;
+    background: #FFFF00;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: #24344e;
+}
+
+.search-container button:hover
+{
+    background: #FFFF00;
+    border: 3px solid #24344e;
+    opacity: .8;
+}
+
+#inner-title
+{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#loginResult
+{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+select
+{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
+}
+
+#search-results
+{
+    height: 200px;
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+table
+{
+    background-color: #b2b2b2;
+    border-collapse: collapse;
+    margin: 0 auto;
+    overflow: scroll;
+}
+  
+th, td
+{
+    text-align: left;
+    padding: 8px;
+    width: 200px;
+}
+  
+tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #FFFF00;
+  color: #24344e;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 250px;
+  font-size: 17px;
+  border: 3px solid #FFFF00;
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* The popup form - hidden by default */
+.form-popup
+{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  margin:auto;
+  /* border: 3px solid #f1f1f1; */
+  z-index: 9;
+  color: black;
+}
+
+.form-container
+{
+  max-width: 300px;
+  margin:auto;
+  margin-top:20px;
+  padding: 10px;
+  background-color: white;
+  text-align: left;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=address], .form-container input[type="CityStateZip"], .form-container input[type="PhoneNumber"] {
+  width: 100%;
+  padding: 15px;
+  color: black;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  text-align: left;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container input[type=address]:focus, .form-container input[type="CityStateZip"]:focus, .form-container input[type="PhoneNumber"]:focus  {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #FFFF00;
+  color: black;
+  padding: 16px 20px;
+  border: 3px solid white;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    border: 3px solid #24344e;
+    opacity: .8;
+}

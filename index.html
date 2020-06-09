@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>LemonCODE Contact List</title>
+	<script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
+</head>
+<body>
+
+
+<br>
+<div id="loginDiv">
+	<div id = "imglogo">
+		<p> </p>
+		<img src="css/images/lemon_logo.png" alt="Sample Logo" class="logo" />
+		<p id="title">LemonCODE Contact List</p>
+	</div>
+
+	<p> </p>
+	<input type="text1" id="loginName" class="login" placeholder="&#xF007; Username" style="font-family: Arial, 'Font Awesome 5 Free'" ><br />
+	<input type="password" id="loginPassword" class="login" placeholder="&#xF023; Password" style="font-family: Arial, 'Font Awesome 5 Free'" ><br />
+	<button type="button" id="loginButton" class="indexbutton" onclick="doLogin();">Login</button>
+	<span id="loginResult"></span>
+	<span id="registerUserSuccessful"></span>
+</div>
+<div>
+	<button type="button" id="newuserbutton" class="indexbutton" onclick="openForm();"> Create New User </button>
+	
+
+		<div class="form-popup" id="myForm">
+			<form class="form-container">
+				<div>
+					<label for="FirstName"><b>First Name</b></label>
+					<input type="text" placeholder="Enter First Name" id="FirstName" required/>
+				</div>
+				<div>
+					<label for="LastName"><b>Last Name</b></label>
+					<input type="text" placeholder="Enter Last Name" id="LastName" required/>
+				</div>
+				<div>
+					<label for="Username"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" id="Username" required/>
+				</div>
+				<div>
+					<label for="Password"><b>Password</b></label>
+					<input type="Password" placeholder="Enter Password" id="Password" required/>
+				</div>
+
+				<input type="button" value="Create User" class="btn" onclick="registerUser();"/>
+				<input type="button" value="Cancel" class="btn cancel" onclick="closeForm();">
+
+			</form>
+		</div>
+	
+</div>
+
+</body>
+</html>

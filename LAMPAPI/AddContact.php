@@ -1,30 +1,29 @@
 <?php
-	$inData = getRequestInfo(); //button?
+	$inData = getRequestInfo();
 	
-	$userId = $inData["userId"]; //$row["ID"];
+	$userId = $inData["userid"]; //$row["ID"];
 	$firstName = $inData["firstName"]; 
 	$lastName = $inData["lastName"];
 	$email = $inData["email"]; 
 	$phoneNumber = $inData["phoneNumber"]; 
-	$contactid = $inData["contactid"];
 
-	$conn = new mysqli("localhost", ***, ***, "cop4331-contacts");
+	$conn = new mysqli("localhost", "xk5kfy582mtp", "sPan136!#^", "cop4331-contacts");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$sql = "UPDATE contact SET userId = " . $userId . ", firstName = '" . $firstName . "', lastName = '" . $lastName . "', email = '" . $email . "', phoneNumber = '" . $phoneNumber . "' WHERE contactid='" . $contactid . "'";
+		$sql = "INSERT into contact (userId,firstName,lastName,email,phoneNumber) VALUES (" . $userId . ",'" . $firstName . "','" . $lastName . "','" . $email . "','" . $phoneNumber . "')";
 
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
 		}
 		$conn->close();
+		
+	    returnWithError("");
 	}
-	
-	returnWithError("");
 	
 	function getRequestInfo()
 	{
