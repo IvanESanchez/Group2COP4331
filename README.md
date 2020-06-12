@@ -1,6 +1,210 @@
-# COP 4331
-## Group 2
+#COP 4331
+##Group 2 - Lemon CODE
+###Alexander Morse, Amber Hoekstra, Chandler Earp, Ivan Sanchez, Julian Braha, Zachary Zimmerman
 
-This is Group 2 for COP 4331
+We have left all of our previous patches available to view in other branches but the zip folder in the Master branch contains ALL THE LATEST WEBSITE CODE.
+If that is your only interesting, then you'll find everything you need there.
 
-Project Framework
+
+# lemoncode.club API documentation
+## Table of contents:
+* [Register.php](#registerphp)
+* [Login.php](#loginphp)
+* [AddContact.php](#addcontactphp)
+* [DeleteContact.php](#deletecontactphp)
+* [SearchContact.php](#searchcontactphp)
+* [UpdateContact.php](#updatecontactphp)
+
+## Register.php
+Attempts to register a new user with a username, first name, last name, and password. If successful, returns their user id for use in other API calls.
+
+### JSON input:
+```
+{ "username":<username>, "password":<password>, "firstName":<first name>, "lastName":<last name> }
+```
+
+`<username>` - string to use as username
+
+`<password>` - string to use as password
+
+`<first name>` - string representing the user's first name
+
+`<last name>` - string representing the user's last name
+<br>
+
+### JSON output on success:
+```
+{ "error":"" }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
+
+## Login.php
+Attempts to login with a given username and password. If successful, returns the first/last name of the user and their user id for use in other API calls.
+
+### JSON input:
+```
+{ "username":<username>, "password":<password> }
+```
+
+`<username>` - string to use as username
+
+`<password>` - string to use as password
+<br>
+
+### JSON output on success:
+```
+{ "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "error":"" }
+```
+
+`<user id>` - integer representing the user's unique id
+
+`<first name>` - string representing the user's first name
+
+`<last name>` - string representing the user's last name
+<br>
+
+### JSON output on failure:
+```
+{ "userid":0, "firstName":"", "lastName":"", "error":"No Records Found" }
+```
+<br><br><br><br>
+
+## AddContact.php
+Attempts to add a contact to the database for a given user.
+
+### JSON input:
+```
+{ "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number> }
+```
+
+`<user id>` - integer representing the user's unique id
+
+`<first name>` - string (max length 20) representing the contact's first name
+
+`<last name>` - string (max length 20) representing the contact's last name
+
+`<email>` - string (max length 320) representing the contacts email address (email#domain.com)
+
+`<phone number>` - string (max length 12. 2 for country code, 3 for area code, 7 for phone number. Does not include hyphens) representing the contact's phone number
+<br>
+
+### JSON output on success:
+```
+{ "error":"" }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
+
+## DeleteContact.php
+Attempts to delete a contact from the database for a given user.
+### JSON input:
+```
+{ "userid":<user id>, "contactid":<contact id> }
+```
+
+`<user id>` - integer representing the user's unique id
+
+`<contact id>` - integer representing the contact's unique id
+<br>
+
+### JSON output on success:
+```
+{ "error":"" }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
+
+## SearchContact.php
+Searches for contacts based on a given search term and returns the results.
+
+### JSON input
+```
+{ "userid":<user id>, "search":<search term> }
+```
+
+`<user id>` - id of user to search contacts of
+
+`<search term>` - string to search for
+<br>
+
+### JSON output on success:
+```
+{ "results":[<contact id 1>, <contact id 2>, ..., <contact id x>], "error":"" }
+{ "results":[<first name 1>, <first name 2>, ..., <first name x>], "error":"" }
+{ "results":[<last name 1>, <last name 2>, ..., <last name x>], "error":"" }
+{ "results":[<email 1>, <email 2>, ..., <email x>], "error":"" }
+{ "results":[<phone number 1>, <phone number 2>, ..., <phone number x>], "error":"" }
+```
+
+`<contact id i>` - integer representing the contact's unique id
+
+`<first name i>` - string representing contact's first name
+
+`<last name i>` - string representing contact's last name
+
+`<email i>` - string representing contact's email
+
+`<phone number i>` - string representing contact's phone number
+<br>
+
+### JSON output on failure:
+```
+{ "userid":0, "firstName":"", "lastName":"", "error":<error> }
+```
+`<error>` - string with error information
+<br><br><br><br>
+
+## UpdateContact.php
+Updates contact information for a given contact for a given user.
+### JSON input:
+```
+{ "userid":<user id>, "firstName":<first name>, "lastName":<last name>, "email":<email>, "phoneNumber":<phone number>, "contactid":<contact id> }
+```
+
+`<user id>` - integer representing the user's unique id
+
+`<first name>` - string (max length 20) representing the contact's first name
+
+`<last name>` - string (max length 20) representing the contact's last name
+
+`<email>` - string (max length 320) representing the contacts email address (email#domain.com)
+
+`<phone number>` - string (max length 15; 2 for country code, 3 for area code, 7 for phone number, and 3 for hyphens) representing the contact's phone number
+
+`<contact id>` - integer representing the contact's unique id
+<br>
+### JSON output on success:
+```
+{ "error":"" }
+```
+<br>
+
+### JSON output on failure:
+```
+{ "error":<error> }
+```
+
+`<error>` - string containing error information
+<br><br><br><br>
