@@ -2,7 +2,7 @@
 ## Group 2 - Lemon CODE
 ### Alexander Morse, Amber Hoekstra, Chandler Earp, Ivan Sanchez, Julian Braha, Zachary Zimmerman
 
-We have left all of our previous patches available to view in other branches but the zip folder in the Master branch contains ALL THE LATEST WEBSITE CODE.
+We have left all of our previous patches available to view in other branches but the FinalCode.zip folder in the Master branch contains ALL THE LATEST WEBSITE CODE.
 If that is your only interesting, then you'll find everything you need there.
 
 
